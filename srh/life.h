@@ -20,8 +20,8 @@
 # include <fcntl.h>
 # include <time.h>
 
-# define HEIGHT 200
-# define WIDTH 200
+# define HEIGHT 400
+# define WIDTH 400
 
 typedef struct	s_env
 {

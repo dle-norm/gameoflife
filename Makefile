@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = life
+NAME = Life
 
-SRC = main.c ft_graph.c object.c ft_grill.c algo.c ft_create.c
+SRC = src/*.c
 
-SRO = $(SRC:.c=.o)
+SRO = sro/*.o
 
 all: $(NAME)
 
@@ -24,7 +24,8 @@ $(NAME) :
 	git submodule update
 	cmake -j -B./glfw -H./glfw
 	make -j -C ./glfw
-	gcc -c $(SRC) -I libft/ -I ./ -I glfw/include/GLFW/
+	gcc -c $(SRC) -I srh/ -I libft/ -I ./ -I glfw/include/GLFW/
+	mv *.o sro/
 	gcc -o $(NAME) $(SRO) -L libft/ -lft -L./glfw/src -lglfw3  -framework glut -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
 
 clean :
